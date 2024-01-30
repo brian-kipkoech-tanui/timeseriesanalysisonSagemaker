@@ -506,8 +506,15 @@ class SARIMAModels(TimeSeries):
                         pred_ci.iloc[:, 0],
                         pred_ci.iloc[:, 1], color='k', alpha=.25)
         ax.set_xlabel('Date')
-        ax.set_ylabel(data.name)
-        plt.title(data.name)
+        try:
+            ax.set_ylabel(data.name)
+        except AttributeError:
+            ax.set_ylabel(data.columns[0])
+        
+        try:
+            plt.title(data.name)
+        except AttributeError:
+            plt.title(data.columns[0])
         plt.legend()
         plt.show()
         return pred_uc.summary_frame()
