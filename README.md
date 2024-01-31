@@ -1,3 +1,6 @@
+# The Architecture Diagram
+![Architecture Diagram](./outputs/timeseries_analysis_architecture.png)
+
 # BasicTimeSeries Automation
 This part has three classes: TimeSeries, ARIMA and SARIMA classes.
 TimeSeries is the parent class that takes care of common time series tasks such as:
